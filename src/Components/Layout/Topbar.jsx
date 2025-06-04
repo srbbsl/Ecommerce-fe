@@ -7,7 +7,7 @@ export const Topbar = () => {
   return (
     <div className="bg-yellow-600 text-white">
         <div className="container mx-auto flex justify-between p-1">
-            <div className="hidden md:flex space-x-4">
+            <div className="hidden md:flex space-x-8">
                 <a href='#' className="hover:text-amber-900">
                     <IoLogoInstagram className='h-5 w-5'/>
                 </a>
