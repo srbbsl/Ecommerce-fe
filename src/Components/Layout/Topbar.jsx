@@ -18,7 +18,7 @@ export const Topbar = () => {
                     <RiTwitterXLine className='h-4 w-4'/>
                 </a>
             </div>
-            <div className='text-center flex-grow'>
+            <div className='text-center text-sm flex-grow'>
                 <span>We deliver all over Nepal</span>
             </div>
             <div className='hidden md:block'>
