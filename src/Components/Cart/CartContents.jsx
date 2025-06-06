@@ -1,4 +1,4 @@
-import { RiDeleteBin3Line } from "react-icons/ri";
+import { RiDeleteBin5Fill } from "react-icons/ri";
 
 export const CartContents = () => {
 
@@ -67,7 +67,7 @@ export const CartContents = () => {
                                 </p>
 
                                 <button>
-                                    <RiDeleteBin3Line className="h-6 w-6 mt-2 ml-4 text-red-600"/>
+                                    <RiDeleteBin5Fill className="h-5 w-5 mt-2 ml-4 text-red-600"/>
                                 </button>
                             </div>
                     </div>

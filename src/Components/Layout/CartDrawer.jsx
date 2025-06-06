@@ -1,12 +1,12 @@
 import { IoMdClose } from "react-icons/io";
 import { CartContents } from "../Cart/CartContents";
 
-export const CartDrawer = ({ drawerOpen, toggleCartDrawer}) => {
+export const CartDrawer = ({ cartDrawerOpen, toggleCartDrawer}) => {
 
 
 
   return (
-    <div className={`border border-gray-200 fixed top-0 right-0 w-3/4 sm:w-1/2 md:w-[25rem] h-full bg-white shadow-lg transform transition-transform duration-300 flex flex-col z-50 ${drawerOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+    <div className={`border border-gray-200 fixed top-0 right-0 w-3/4 sm:w-1/2 md:w-[25rem] h-full bg-white shadow-lg transform transition-transform duration-300 flex flex-col z-50 ${cartDrawerOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         {/* Close Button */}
         <div className="flex justify-end p-1">
             <button onClick={toggleCartDrawer}>

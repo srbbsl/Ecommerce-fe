@@ -4,13 +4,19 @@ import { Link } from "react-router"
 import { SearchBar } from "./SearchBar"
 import { CartDrawer } from "../Layout/CartDrawer"
 import { useState } from "react"
+import { MobileNavigation } from "../Layout/MobileNavigation"
 
 export const Navbar = () => {
 
-    const [drawerOpen, setDrawerOpen] = useState(false);
+    const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
+    const [mobCartDrawerOpen, setMobCartDrawerOpen] = useState(false);
 
     const toggleCartDrawer = () => {
-        setDrawerOpen(!drawerOpen);
+        setCartDrawerOpen(!cartDrawerOpen);
+    };
+
+    const toggleMobCartDrawer = () => {
+        setMobCartDrawerOpen(!mobCartDrawerOpen)
     };
 
     return (
@@ -67,12 +73,16 @@ export const Navbar = () => {
                         <SearchBar />
                     </div>
                     
-                    <button className="md:hidden">
+                    <button onClick={toggleMobCartDrawer} className="md:hidden">
                         <HiBars3BottomRight className="h-6 w-6 text-gray-500"/>
                     </button>
                 </div>
             </nav>
-            <CartDrawer drawerOpen={drawerOpen} toggleCartDrawer={toggleCartDrawer}/>
+
+            <CartDrawer cartDrawerOpen={cartDrawerOpen} toggleCartDrawer={toggleCartDrawer} />
+
+            {/* Mobile Navigation */}
+            <MobileNavigation mobCartDrawerOpen={mobCartDrawerOpen} toggleMobCartDrawer={toggleMobCartDrawer} />
         </>
     )
     }
