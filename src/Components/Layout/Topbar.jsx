@@ -7,7 +7,7 @@ export const Topbar = () => {
   return (
     <div className="bg-yellow-600 text-white">
         <div className="container mx-auto flex justify-between p-1">
-            <div className="hidden md:flex space-x-4">
+            <div className="hidden md:flex space-x-8">
                 <a href='#' className="hover:text-amber-900">
                     <IoLogoInstagram className='h-5 w-5'/>
                 </a>
@@ -18,7 +18,7 @@ export const Topbar = () => {
                     <RiTwitterXLine className='h-4 w-4'/>
                 </a>
             </div>
-            <div className='text-center flex-grow'>
+            <div className='text-center text-sm flex-grow'>
                 <span>We deliver all over Nepal</span>
             </div>
             <div className='hidden md:block'>
