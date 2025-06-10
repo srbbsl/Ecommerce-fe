@@ -2,8 +2,8 @@ import { Link } from "react-router"
 
 export const GenderCollection = () => {
   return (
-    <section className="py-12 px-4 lg:px-0">
-        <div className="container max-w-full flex flex-col md:flex-row gap-8">
+    <section className="py-1 px-4 lg:px-0">
+        <div className=" max-w-full flex flex-col md:flex-row gap-1">
             {/* Women's Collection */}
             <div className="relative flex-1">
                 <img

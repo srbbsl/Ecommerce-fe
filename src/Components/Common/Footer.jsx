@@ -6,8 +6,8 @@ import { Link } from "react-router"
 
 export const Footer = () => {
   return (
-    <footer className="border-t border-gray-200 py-12">
-        <div className="bg-gray-200 container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-4 lg:px-0 p-4">
+    <footer className="border-t border-gray-200 py-12 p-4">
+        <div className="bg-gray-200 grid grid-cols-1 md:grid-cols-4 gap-8 px-4 lg:px-0 p-4">
             <div>
                 <h3 className="text-lg text-gray-500 mb-4">
                     Newsletter
@@ -133,10 +133,11 @@ export const Footer = () => {
                 </p>
             </div>     
         </div>
+        
 
         {/* Footer Bottom */}
-            <div className=" container mx-auto mt-12 px-4 lg:px-0 border-t border-gray-200 pt-4">
-                <p className="text-gray-500 text-sm tracking-tighter text-center">
+            <div className="mt-12 px-4 lg:px-0 border-t border-gray-200 pt-4">
+                <p className="text-gray-800 text-sm tracking-tighter text-center">
                     ©2025, SaurabProduction. All Rights Reserved
                 </p>
             </div>
