@@ -16,24 +16,24 @@ const selectedProduct = {
         }, 
         {
             url: 'https://picsum.photos/500/500?random=3',
-            altText: 'Stylish Jacket 1',
+            altText: 'Stylish Jacket 2',
         },          
     ],
 };
 export const ProductDetails = () => {
   return (
     <div className="p-6">
-        <div className="max-w-6xl mx-auto bg-amber-200 p-8 rounded-b-lg">
-            <div className="flex flex-row md:flex-row">
+        <div className="max-w-6xl mx-auto p-8 rounded-b-lg">
+            <div className="flex flex-col md:flex-row">
                 
                 {/* Left Thumbnails */}
-                <div className=" md:flex flex-col space-y-4 mr-6">
+                <div className="hidden md:flex flex-col space-y-4 mr-6">
                     {selectedProduct.images.map((image, index) => ( 
                         <img
                             key={index}
                             src={image.url}
                             alt={image.altText || `Thumbnail ${index}`}
-                            className="w-20 h-20 object-cover rounded-lg cursor-pointer border border-gray-500"
+                            className="w-20 h-20 object-cover rounded-lg cursor-pointer border"
                         />                     
                     ))}
                 </div>
@@ -49,18 +49,90 @@ export const ProductDetails = () => {
                     </div>                   
                 </div>
 
-                    {/* MObile Thumbnail */}
-                    <div className="md:hidden flex overscroll-x-auto space-x-4 mb-4">
-                        {selectedProduct.images.map((image, index) => ( 
-                            <img
-                                key={index}
-                                src={image.url}
-                                alt={image.altText || `Thumbnail ${index}`}
-                                className="w-20 h-20 object-cover rounded-lg cursor-pointer border border-gray-500"
-                            />                     
-                        ))}
-                    </div>
+                {/* MObile Thumbnail */}
+                <div className="md:hidden flex overscroll-x-auto space-x-4 mb-4">
+                    {selectedProduct.images.map((image, index) => ( 
+                        <img
+                            key={index}
+                            src={image.url}
+                            alt={image.altText || `Thumbnail ${index}`}
+                            className="w-20 h-20 object-cover rounded-lg cursor-pointer border"
+                        />                     
+                    ))}
+                </div>
                 
+                {/* Right Side */}
+                <div className="md:w-1/2 md:ml-10">
+                    <h1 className="text-2xl md:text-3xl font-semibold mb-2">
+                        {selectedProduct.name}
+                    </h1>
+
+                    <p className="text-lg text-gray-600 mb-1 line-through">
+                        {selectedProduct.originalPrice && `${selectedProduct.originalPrice}`}
+                    </p>
+
+                    <p className="text-xl text-gray-600 mb-2">
+                        NPR {selectedProduct.price}
+                    </p>
+
+                    <p className="text-gray-600 mb-4">
+                        {selectedProduct.description}
+                    </p>
+
+                    <div className="mb-4">
+                        <p className="text-gray-700">
+                            Color:
+                        </p>
+                    
+                        <div className="flex gap-2 mt-2">
+                            {selectedProduct.colors.map((color) => (
+                                <button
+                                    key={color}
+                                    style={{
+                                        backgroundColor: color.toLowerCase(),
+                                        filter: 'brightness(0.5)',
+                                    }} 
+                                    className="w-8 h-8 rounded-full mr-2 cursor-pointer" 
+                                >
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                    
+                    <div className="mb-4">
+                        <p className="text-gray-700">
+                            Size:
+                        </p>
+                        <div className="flex gap-2 mt-2">
+                            {selectedProduct.sizes.map((size) => (
+                                <button
+                                    key={size}
+                                    className="px-4 py-2 rounded border"
+                                >
+                                    {size}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="mb-6">
+                        <p className="text-gray-700">
+                            Quantity:
+                        </p>
+                        
+                        <div className="flex items-center space-x-4 mt-2">
+                            <button className="bg-gray-200 rounded px-2 py-1 text-lg">
+                                -
+                            </button>
+                            <span className="text-lg">
+                                    1
+                            </span>
+                            <button className="bg-gray-200 rounded px-2 py-1 text-lg">
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
