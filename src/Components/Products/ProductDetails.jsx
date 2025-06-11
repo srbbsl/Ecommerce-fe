@@ -52,7 +52,7 @@ const similarProducts = [
  ];
 export const ProductDetails = () => {
 
-    const [mainImage, setMainImage] = useState('');
+    const [mainImage, setMainImage] = useState(selectedProduct?.images?.[0]?.url || null); //changes this later in video only '' and got warning on console
     const [selectedSize, setSelectedSize] = useState('');
     const [selectedColor, setSelectedColor] = useState('');
     const [quantity, setQuantity] = useState(1);
