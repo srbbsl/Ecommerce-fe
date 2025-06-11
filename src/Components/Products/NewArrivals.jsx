@@ -124,11 +124,11 @@ export const NewArrivals = () => {
       setCanScrollRight(rightScrollable);
     }
 
-    console.log({
-      scrollLeft: container.scrollLeft,
-      clientWidth: container.clientWidth,
-      containerScrollWidth: container.scrollWidth,
-    });
+    // console.log({
+    //   scrollLeft: container.scrollLeft,
+    //   clientWidth: container.clientWidth,
+    //   containerScrollWidth: container.scrollWidth,
+    // });
   };
 
   useEffect(() => {
@@ -146,7 +146,7 @@ export const NewArrivals = () => {
         <h2 className="text-2xl font-bold mb-4">
           Explore New Arrivals
         </h2>
-        <p className="text-lg text-gray-600 mb-5">
+        <p className="text-lg text-gray-600">
           Watch our new arrivals and choose your trend. Be free to discover the latest styles.
         </p>
 
