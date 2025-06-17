@@ -75,7 +75,7 @@ export const FilterSideBar = () => {
     }, [searchParams]);
 
     return (
-        <div className="p-4">
+        <div className="p-4 h-screen overflow-y-auto">
             <h3
                 className="text-xl font-medium text-gray-800 mb-4"
             >
@@ -83,6 +83,131 @@ export const FilterSideBar = () => {
             </h3>
 
             {/* Category Filter */}
+            <div className="mb-6">
+                <label
+                    className="block text-gray-600 font-medium mb-2"
+                >
+                    Category
+                </label>
+                    {categories.map((category) => (
+                        <div 
+                            key={category}
+                            className="flex items-center mb-1"
+                        >
+                            <input 
+                                type="radio"
+                                name="category"
+                                className="mr-2 h-4 w-4 text-yellow-800 focus:ring-yellow-400 border-gray-300"
+                            />
+                            <span className="text-gray-700">{category}</span>
+                        </div>
+                    ))}
+            </div>
+            
+            {/* Gender Filter */}
+            <div className="mb-6">
+                <label
+                    className="block text-gray-600 font-medium mb-2"
+                >
+                    Gender
+                </label>
+                    {genders.map((gender) => (
+                        <div 
+                            key={gender}
+                            className="flex items-center mb-1"
+                        >
+                            <input 
+                                type="radio"
+                                name="gender"
+                                className="mr-2 h-4 w-4 text-yellow-800 focus:ring-yellow-400 border-gray-300"
+                            />
+                            <span className="text-gray-700">{gender}</span>
+                        </div>
+                    ))}
+            </div>
+            
+            {/* Color Filter */}
+            <div className="mb-6">
+                <label
+                    className="block text-gray-600 font-medium mb-2"
+                >
+                        Color
+                </label>
+
+                <div className="flex flex-wrap gap-2">
+                    {colors.map((color) => (
+                        <button
+                            key={color}
+                            name="color"
+                            className="border w-8 h-8 rounded-full border-gray-300 cursor-pointer transition hover:scale-105"
+                            style={{ backgroundColor: color.toLowerCase() }}
+                        ></button>
+                    ))}
+                </div>
+            </div>
+
+            {/* Size Filter */}
+            <div className="mb-6">
+                <label className="block text-gray-600 font-medium mb-2">
+                    Size
+                </label>
+
+                {sizes.map((size) => (
+                    <div
+                        key={size}
+                        className="flex items-center gap-2 mb-1"
+                    >
+                        <input
+                            type='checkbox'
+                            name="size"
+                            className="border-gray-300 h-4 w-4 text-yellow-900 focus:ring-yellow-500"
+                        />
+                         <span className="text-gray-700">{size}</span>
+                    </div>
+                ))}
+            </div>
+
+            {/* Material Filter */}
+            <div className="mb-6">
+                <label className="block text-gray-600 font-medium mb-2">
+                    Material
+                </label>
+
+                {materials.map((material) => (
+                    <div
+                        key={material}
+                        className="flex items-center gap-2 mb-1"
+                    >
+                        <input
+                            type='checkbox'
+                            name="size"
+                            className="border-gray-300 h-4 w-4 text-yellow-900 focus:ring-yellow-500"
+                        />
+                         <span className="text-gray-700">{material}</span>
+                    </div>
+                ))}
+            </div>
+
+            {/* Brand Filter */}
+            <div className="mb-6">
+                <label className="block text-gray-600 font-medium mb-2">
+                    Brands
+                </label>
+
+                {brands.map((brand) => (
+                    <div
+                        key={brand}
+                        className="flex items-center gap-2 mb-1"
+                    >
+                        <input
+                            type='checkbox'
+                            name="brand"
+                            className="border-gray-300 h-4 w-4 text-yellow-900 focus:ring-yellow-500"
+                        />
+                         <span className="text-gray-700">{brand}</span>
+                    </div>
+                ))}
+            </div>
         </div>
-    )
+    );
 };
