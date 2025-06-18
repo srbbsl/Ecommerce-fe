@@ -78,7 +78,8 @@ export const CollectionPage = () => {
             {/* Filter Sidebar */}
             <div 
                 ref={sidebarRef}
-                className={`${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} fixed top-0 left-0 w-[200px] sm:w-1/2 md:w-1/3 h-full bg-white shadow-lg transform transition-transform duration-300 z-50`}
+                className={`${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} fixed bg-white inset-y-0 z-50 left-0 w-64 overflow-y-auto lg:static lg:translate-x-0 transition-transform duration-300`}
+                // fixed top-0 left-0 w-[200px] sm:w-1/2 md:w-1/3 h-full bg-white shadow-lg transform transition-transform duration-300 z-50
             >
                     <FilterSideBar />
             </div>
