@@ -74,8 +74,28 @@ export const FilterSideBar = () => {
         setPriceRange([0, params.maxPrice || 100]);
     }, [searchParams]);
 
+    const handleFilterChange = (e) => {
+        const { name, value, checked, type } = e.target;
+        // console.log({name, value, checked, type});
+
+        let newFilters = { ...filters };
+
+        if (type === 'checkbox') {
+            if (checked) {
+                newFilters[name] = [...(newFilters[name] || []), value];
+            } else {
+                newFilters[name] = newFilters[name].filter((item) => item !== value);
+            }
+        } else {
+            newFilters[name] = value;
+        }
+
+        setFilters(newFilters);
+        console.log(newFilters)
+    };
+
     return (
-        <div className="p-4 h-screen overflow-y-auto">
+        <div className="p-4">
             <h3
                 className="text-xl font-medium text-gray-800 mb-4"
             >
@@ -97,6 +117,8 @@ export const FilterSideBar = () => {
                             <input 
                                 type="radio"
                                 name="category"
+                                value={category}
+                                onChange={handleFilterChange}
                                 className="mr-2 h-4 w-4 text-yellow-800 focus:ring-yellow-400 border-gray-300"
                             />
                             <span className="text-gray-700">{category}</span>
@@ -119,6 +141,8 @@ export const FilterSideBar = () => {
                             <input 
                                 type="radio"
                                 name="gender"
+                                value={gender}
+                                onChange={handleFilterChange}
                                 className="mr-2 h-4 w-4 text-yellow-800 focus:ring-yellow-400 border-gray-300"
                             />
                             <span className="text-gray-700">{gender}</span>
@@ -139,6 +163,8 @@ export const FilterSideBar = () => {
                         <button
                             key={color}
                             name="color"
+                            value={color}
+                            onClick={handleFilterChange}
                             className="border w-8 h-8 rounded-full border-gray-300 cursor-pointer transition hover:scale-105"
                             style={{ backgroundColor: color.toLowerCase() }}
                         ></button>
@@ -160,6 +186,8 @@ export const FilterSideBar = () => {
                         <input
                             type='checkbox'
                             name="size"
+                            value={size}
+                            onChange={handleFilterChange}
                             className="border-gray-300 h-4 w-4 text-yellow-900 focus:ring-yellow-500"
                         />
                          <span className="text-gray-700">{size}</span>
@@ -180,7 +208,9 @@ export const FilterSideBar = () => {
                     >
                         <input
                             type='checkbox'
-                            name="size"
+                            name="material"
+                            value={material}
+                            onChange={handleFilterChange}
                             className="border-gray-300 h-4 w-4 text-yellow-900 focus:ring-yellow-500"
                         />
                          <span className="text-gray-700">{material}</span>
@@ -202,11 +232,32 @@ export const FilterSideBar = () => {
                         <input
                             type='checkbox'
                             name="brand"
+                            value={brand}
+                            onChange={handleFilterChange}
                             className="border-gray-300 h-4 w-4 text-yellow-900 focus:ring-yellow-500"
                         />
                          <span className="text-gray-700">{brand}</span>
                     </div>
                 ))}
+            </div>
+
+            {/* Price rang filter */}
+            <div>
+                <label>
+                    Price Range
+                </label>
+                <input 
+                    type="range"
+                    name="priceRange"
+                    min={0}
+                    max={100}
+                    className="bg-gray-300 rounded-lg w-full h-2 cursor-pointer"
+                />
+                
+                <div className="flex justify-between text-gray-600 mt-2">
+                    <span>NPR 0</span>
+                    <span>NPR {priceRange[1]}</span>
+                </div>
             </div>
         </div>
     );
