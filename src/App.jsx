@@ -7,7 +7,7 @@ import { Register } from './pages/Register'
 import { Profile } from './pages/Profile'
 import { CollectionPage } from './pages/CollectionPage'
 import { ProductDetails } from './Components/Products/ProductDetails'
-import { NewArrivals } from './Components/Products/NewArrivals'
+import { CheckOut } from './Components/Cart/CheckOut'
 
 export const App = () => {
   return (
@@ -22,7 +22,7 @@ export const App = () => {
           <Route path='profile' element={<Profile />} />
           <Route path='collections/:collection' element={<CollectionPage />} />
           <Route path='product/:id' element={<ProductDetails />} />
-          
+          <Route path='checkout' element={<CheckOut />} />
         </Route>
 
         <Route>{/*Admin Layout */}</Route>
