@@ -194,7 +194,7 @@ export const NewArrivals = () => {
               />
 
               <div className="absolute bottom-0 left-0 right-0 backdrop-blur-md p-4 rounded-b-lg text-white">
-                <Link className="block">
+                <Link to={`/product/${product._id}`} className="block">
                   <h4>{product.name}</h4>
                   <p>NPR{product.price}</p>
                 </Link>
